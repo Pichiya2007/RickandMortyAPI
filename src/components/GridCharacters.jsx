@@ -4,13 +4,13 @@ export const GridCharacters = ({characters}) => {
 
   return (
     <>
-      <div className="d-flex flex-row row row-cols-6">
+      <div className="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-0 grid gap-3" style={{width: "1985px"}}>
         {
             characters.map((char) => (
-                <div key={char.id} className="card mt-5">              
-                <img style={{ width: "13rem" }} className="card-img-top" src={char.image} alt={char.name} />
+                <div key={char.id} className="card mt-5 ">              
+                <img style={{ width: "100%", height: "15rem", objectFit: "cover" }} className="card-img-top" src={char.image} alt={char.name} />
                     <div className="card-body">
-                        <p className="card-text">Nombre: {char.name}</p>
+                        <h5 className="card-title">{char.name}</h5>
                         <p className="card-text">Especie: {char.species}</p>
                     </div>
                 </div>
