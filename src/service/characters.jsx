@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const reqCharacters = async (page, personaje = "") => {
+export const reqCharacters = async (page, personaje, species = "") => {
 
-    const resp = await fetch(`https://rickandmortyapi.com/api/character?page=${page}&name=${personaje}`);
-    const data = await resp.json(); // Corrección aquí
-    console.log(data);
+    const url = `https://rickandmortyapi.com/api/character?page=${page}&name=${personaje}&species=${species}`
+    const resp = await fetch(url)
+    const data = await resp.json()
     return data;
 }
